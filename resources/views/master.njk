@@ -14,33 +14,62 @@
 </head>
 <body>
 
-  <main>
-  <section>
-    <div class="__wrapper">
-    <nav class="blue darken-3">
-      <div class="container">
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Popular Posts</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href='/login'>Log in</a></li>
-        <li><a href='/register'>Register</a></li>
-      </ul>
-    </div>
-    </div>
-    </nav>
+    <main>
+    <section>
+      <div class="__wrapper">
+      <nav class="blue darken-3">
+        <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Popular Posts</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href='/login'>Log in</a></li>
+          <li><a href='/register'>Register</a></li>
+        </ul>
+      </div>
+      </div>
+      </nav>
 
-      {% block content %}
-      {% endblock %}
-    </main>
+          {% if old('error') %}
+          <div class="container">
+            <div class="row">
+              <div class="card red darken-1">
+                <div class="card-content">
+                  <p class="alert alert--warning white-text">
+                    <strong>Alert:</strong> {{ old('error') }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% if old('success') %}
+          <div class="container">
+            <div class="row">
+              <div class="card green accent-2">
+                <div class="card-content">
+                  <p class="alert alert--success">
+                    Success: {{ old('success') }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+      </main>
 
 
       {% block footer %}
-      <footer class="page-footer grey lighten-1">
+      <footer class="page-footer grey darken-4">
        <div class="container">
          <div class="row">
            <div class="col l6 s12">
-             <h5 class="grey-text text-darken-3">Popular Posts</h5>
-             <p class="grey-text text-darken-3">Thanks for visiting</p>
+             <h5 class="white-text">Popular Posts</h5>
+             <p class="white-text">Thanks for visiting</p>
            </div>
          </div>
        </div>
