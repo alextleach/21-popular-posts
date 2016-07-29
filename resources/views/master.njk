@@ -9,30 +9,53 @@
   <link rel="stylesheet" type="text/css" href="/dist/app.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
 
+  <main>
   <section>
     <div class="__wrapper">
+    <nav class="blue darken-3">
+      <div class="container">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Popular Posts</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href='/login'>Log in</a></li>
+        <li><a href='/register'>Register</a></li>
+      </ul>
+    </div>
+    </div>
+    </nav>
+
       {% block content %}
       {% endblock %}
+    </main>
+
 
       {% block footer %}
-        <div class="__footer">
-          <ul>
-            <li>
-              <a href="https://twitter.com/intent/tweet?url=http://adonisjs.com&text=I am using AdonisJs, a practical MVC framework for nodejs&hashtags=nodejs,adonisframework" target="_blank"><img src="/assets/twitter.svg"></a>
-            </li>
-            <li>
-              <a href="https://github.com/adonisjs/adonis-framework" target="_blank"><img src="/assets/github.svg"></a>
-            </li>
-          </ul>
-        </div>
+      <footer class="page-footer grey lighten-1">
+       <div class="container">
+         <div class="row">
+           <div class="col l6 s12">
+             <h5 class="grey-text text-darken-3">Popular Posts</h5>
+             <p class="grey-text text-darken-3">Thanks for visiting</p>
+           </div>
+         </div>
+       </div>
+       <div class="footer-copyright">
+         <div class="container">
+         © 2016 Alex
+         <a class="grey-text text-darken-2 right" href="#!">More Links</a>
+         </div>
+       </div>
+     </footer>
+
       {% endblock %}
     </div><!-- end wrapper -->
   </section>
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </body>
 </html>

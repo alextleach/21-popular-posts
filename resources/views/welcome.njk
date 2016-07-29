@@ -1,10 +1,19 @@
 {% extends 'master' %}
 
 {% block content %}
-  <div class="__banner">
-    <div class="banner__inner">
-      <img src="/assets/logo.svg">
-      <h2>Practical <span>Reliable</span> Productive</h2>
+<div class="container">
+<div class="row">
+      <div class="col s12">
+        <h2 class="center-align">Welcome to Popular Posts!</h2>
+      </div>
+      <div class="col s6 center-align ">
+        <a href="/login" class="waves-effect waves-light btn red darken-1">
+          <i class="material-icons left">vpn_key</i>Log In</a>
+      </div>
+      <div class="col s6 center-align">
+      <a href="/register" class="waves-effect waves-light btn red darken-1">
+        <i class="material-icons left">assignment_ind</i>Register</a>
+      </div>
     </div>
   </div>
 {% endblock %}
