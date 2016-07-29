@@ -28,3 +28,4 @@ Route.get('/login').render('login');
   Route.post('/login', 'SessionController.store');
 
 Route.get('/posts').render('posts.index');
+Route.get('/create', 'PostController.index')
