@@ -11,13 +11,13 @@
         {{ csrfField }}
         <div class="row">
           <div class="input-field col s12">
-            <input id="user_name" type="text" name="user_name" class="validate">
+            <input id="user_name" type="text" name="user_name" class="validate" value="{{ old('user_name') }}">
             <label for="user_name">Username</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
-            <input id="email" type="email" name="email" class="validate">
+            <input id="email" type="email" name="email" class="validate" value="{{ old('email') }}">
             <label for="email">Email</label>
           </div>
         </div>

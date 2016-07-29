@@ -6,12 +6,12 @@
   <div class="card-content grey-text-darken-2">
   <span class="card-title">Log in</span>
 <div class="row">
-    <form class="col s12" action="/register" method="POST">
+    <form class="col s12" action="/login" method="POST">
       {{ csrfField }}
       <div class="row">
         <div class="input-field col s12">
-          <input id="user_name" type="text" name="user_name" class="validate">
-          <label for="user_name">Username</label>
+          <input id="email" type="email" name="email" class="validate" value="{{ old('email') }}">
+          <label for="user_name">Email</label>
         </div>
       </div>
       <div class="row">

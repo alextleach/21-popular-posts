@@ -23,4 +23,8 @@ Route.get('/register').render('register')
   Route.get('/register', 'UserController.create');
   Route.post('/register', 'UserController.store');
 
-  Route.get('/login').render('login')
+Route.get('/login').render('login');
+  Route.get('/login', 'SessionController.create');
+  Route.post('/login', 'SessionController.store');
+
+Route.get('/posts').render('posts.index');

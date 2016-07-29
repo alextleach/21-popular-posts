@@ -32,29 +32,27 @@
           {% if old('error') %}
           <div class="container">
             <div class="row">
-              <div class="card red darken-1">
-                <div class="card-content">
-                  <p class="alert alert--warning white-text center-align">
+              <div class="chip red darken-1">
+                  <p class="white-text center-align">
                     <strong>Alert:</strong> {{ old('error') }}
-                  </p>
+                  <i class="close material-icons right">close</i>
+                </p>
                 </div>
               </div>
             </div>
-          </div>
         {% endif %}
 
         {% if old('success') %}
           <div class="container">
             <div class="row">
-              <div class="card green accent-2">
-                <div class="card-content">
-                  <p class="alert alert--success">
+              <div class="chip green accent-2">
+                  <p class="alert alert--success center-align">
                     Success: {{ old('success') }}
-                  </p>
+                  <i class="close material-icons right">close</i>
+                </p>
                 </div>
               </div>
             </div>
-          </div>
         {% endif %}
 
         {% block content %}
