@@ -9,6 +9,9 @@ class PostSchema extends Schema {
       table.increments()
       table.string('title');
       table.string('post');
+      table.integer('likes');
+      table.integer('user_id');
+      table.boolean('is_fav');
       table.timestamps()
     })
   }
