@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const Post = use('App/Model/Post');
 
@@ -11,16 +11,17 @@ class PostController {
 
   * create(request, response) {
     yield response.sendView('posts.create');
-
   }
 
   * store(request, response) {
-    const { title, post, user_id } = request.all();
+    const { title, post } = request.all();
 
 
     // yield request.authUser.posts().create({ title, post, user_id });
 
-    yield Post.create({ title, post, user_id });
+    // yield Post.create({ title, post, user_id });
+    yield request.authUser.posts()
+    .create({ title, post });
 
     yield request.with({ success: 'New post is now listed!' }).flash();
 
@@ -46,4 +47,4 @@ class PostController {
 
 }
 
-module.exports = PostController
+module.exports = PostController;
