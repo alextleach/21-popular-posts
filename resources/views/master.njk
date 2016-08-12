@@ -1,38 +1,100 @@
-<!doctype html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-  <title>AdonisJs - Node.Js MVC Framework</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>21 Popular Posts</title>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="/dist/app.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 <body>
 
-  <section>
-    <div class="__wrapper">
-      {% block content %}{% endblock %}
+    <main>
+    <section>
+      <div class="__wrapper">
+      <nav class="blue darken-3">
+        <div class="container">
+      <div class="nav-wrapper">
+
+        {% if currentUser %}
+        <a href="/posts" class="brand-logo">Popular Posts</a>
+        {% else %}
+        <a href="/" class="brand-logo">Popular Posts</a>
+        {% endif %}
+
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          {% if currentUser %}
+                <li><p class="chip blue darken-2 white-text center-align">Hello there, {{ currentUser.user_name }}!</p></li>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/logout">Logout</a></li>
+              {% else %}
+              <li><a href="/login">Login</a></li>
+              <li><a href="/register">Sign Up</a></li>
+              {% endif %}
+        </ul>
+      </div>
+      </div>
+      </nav>
+
+          {% if old('error') %}
+          <div class="container">
+            <div class="row">
+              <div class="chip red darken-1">
+                  <p class="white-text center-align">
+                    <strong>Alert:</strong> {{ old('error') }}
+                  <i class="close material-icons right">close</i>
+                </p>
+                </div>
+              </div>
+            </div>
+        {% endif %}
+
+        {% if old('success') %}
+          <div class="container">
+            <div class="row">
+              <div class="chip green accent-2">
+                  <p class="alert alert--success center-align">
+                    Success: {{ old('success') }}
+                  <i class="close material-icons right">close</i>
+                </p>
+                </div>
+              </div>
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+
+      </main>
+
 
       {% block footer %}
-        <div class="__footer">
-          <ul>
-            <li>
-              <a href="https://twitter.com/intent/tweet?url=http://adonisjs.com&text=I am using AdonisJs, a practical MVC framework for nodejs&hashtags=nodejs,adonisframework" target="_blank">
-                <img src="/assets/twitter.svg">
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/adonisjs/adonis-framework" target="_blank"><img src="/assets/github.svg"></a>
-            </li>
-          </ul>
-        </div>
-      {% endblock %}
-    </div>
-  </section>
+      <footer class="page-footer grey darken-4">
+       <div class="container">
+         <div class="row">
+           <div class="col l6 s12">
+             <h5 class="white-text">Popular Posts</h5>
+             <p class="white-text">Thanks for visiting</p>
+           </div>
+         </div>
+       </div>
+       <div class="footer-copyright">
+         <div class="container">
+         © 2016 Alex
+         <a class="grey-text text-darken-2 right" href="#!">More Links</a>
+         </div>
+       </div>
+     </footer>
 
+      {% endblock %}
+    </div><!-- end wrapper -->
+  </section>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </body>
 </html>

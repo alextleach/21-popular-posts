@@ -1,10 +1,22 @@
 {% extends 'master' %}
 
 {% block content %}
-  <div class="__banner">
-    <div class="banner__inner">
-      <img src="/assets/logo.svg">
-      <h2>Practical <span>Reliable</span> Productive</h2>
+<div class="container valign">
+<div class="row">
+      <div class="col s12">
+        <h3 class="center-align grey-text text-darken-1">Welcome to Popular Posts!</h3>
+        <h5 class="center-align grey-text">You need an account to view Popular Posts.</h5>
+      </div>
+</div>
+<div class="row">
+      <div class="col s6 right-align ">
+        <a href="/login" class="waves-effect waves-light btn blue darken-3">
+          <i class="material-icons left">vpn_key</i>Log In</a>
+      </div>
+      <div class="col s6 left-align">
+      <a href="/register" class="waves-effect waves-light btn blue darken-3">
+        <i class="material-icons left">assignment_ind</i>Register</a>
+      </div>
     </div>
   </div>
 {% endblock %}
